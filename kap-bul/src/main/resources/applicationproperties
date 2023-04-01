@@ -1,0 +1,9 @@
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.hikari.connection-timeout=20000
+spring.datasource.hikari.maximum-pool-size=3
+
+spring.datasource,.url=jdbc:postgresql://kandula.db.elephantsql.com:5432/nnpdtyax
+spring.datasource.username=nnpdtyax
+spring.datasource.password=GHFZB2IN3K3U4Dhfb1Jonxv5deDAvazQ
+spring.jpa.show-sql=true
+

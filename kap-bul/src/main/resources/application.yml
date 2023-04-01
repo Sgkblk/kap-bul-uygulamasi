@@ -1,0 +1,62 @@
+#RedisSifre: 9QLo3jAsz2zTOrFGtOZ5z9qP668TJAcj
+#RedisKullaniciAdi: yok
+#port : 17017
+#serveradres: redis-17017.c14.us-east-1-2.ec2.cloud.redislabs.com
+
+
+#  redis-cli -u redis://default:9QLo3jAsz2zTOrFGtOZ5z9qP668TJAcj@redis-17017.c14.us-east-1-2.ec2.cloud.redislabs.com:17017
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+
+
+
+spring:
+  main:
+      allow-circular-references: true
+  cache:
+    type: redis
+    redis:
+      time-to-live: 30
+      cache-null-values: false
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  redis:
+    timeout: 3000
+    database: 0
+    host: redis-17017.c14.us-east-1-2.ec2.cloud.redislabs.com
+    password: 9QLo3jAsz2zTOrFGtOZ5z9qP668TJAcj
+    connect-timeout: 20000
+    port: 17017
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 8
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      FAIL_ON_EMPTY_BEANS: false
+    deserialization:
+      unwrap-root-value: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 3
+    url: jdbc:postgresql://kandula.db.elephantsql.com:5432/nnpdtyax
+    username: nnpdtyax
+    password: GHFZB2IN3K3U4Dhfb1Jonxv5deDAvazQ
+
+clear:
+  all:
+    cache:
+      fixed:
+        rate:
